@@ -4,6 +4,7 @@
 
 String command;
 
+//  abstract class
 class BangunRuang{
     protected:
         int pin;
@@ -18,6 +19,7 @@ class BangunRuang{
 
 };
 
+// Balok class
 class Balok:public BangunRuang {
   public:
     Balok(int inputPin) {
@@ -36,6 +38,7 @@ class Balok:public BangunRuang {
     }
 };
 
+// Kubus class
 class Kubus:public BangunRuang {
   public:
     Kubus(int inputPin) {
@@ -54,6 +57,7 @@ class Kubus:public BangunRuang {
     }
 };
 
+// Silinder class
 class Silinder:public BangunRuang {
   public:
     Silinder(int inputPin) {
@@ -72,7 +76,7 @@ class Silinder:public BangunRuang {
     }
 };
 
-
+// deklarasi objek dari tiap kelas
 Balok balok(LED_1_PIN);
 Kubus kubus(LED_2_PIN);
 Silinder silinder(LED_3_PIN);
@@ -87,20 +91,32 @@ void loop() {
     }
     if (command=="merah_on"){
         balok.on();
+      	delay(500);
+      	command=""; // nilai string command diganti agak tidak ngeprint hal yang sama terus
     } else if (command == "merah_off"){
         balok.off();
+      	delay(500);
+      	command=""; // nilai string command diganti agak tidak ngeprint hal yang sama terus
     }
 
     if (command == "hijau_on"){
         kubus.on();
+      	delay(500);
+      	command=""; // nilai string command diganti agak tidak ngeprint hal yang sama terus
     } else if (command == "hijau_off") {
         kubus.off();
+      	delay(500);
+      	command=""; // nilai string command diganti agak tidak ngeprint hal yang sama terus
     }
 
     if (command == "biru_on") {
         silinder.on();
+      	delay(500);
+      	command=""; // nilai string command diganti agak tidak ngeprint hal yang sama terus
     } else if (command == "biru_off") {
         silinder.off();
+      	delay(500);
+      	command=""; // nilai string command diganti agak tidak ngeprint hal yang sama terus
     }
     
 }
